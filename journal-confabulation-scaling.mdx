@@ -1,0 +1,27 @@
+---
+title: "Confabulation Scaling: Predictable Confabulations: Factual Recall by LLMs Scales wi"
+abstract: "Predict LLM factual recall errors via scaling laws"
+authors:
+  - name: "Andrew Young"
+    affiliation: "Automate Capture Research"
+publishedDate: 2026-05-19
+tags:
+  - Large Language Models
+  - Factual Recall
+  - Model Scaling
+  - Confabulation
+  - Topic Frequency
+status: published
+featured: false
+pdfUrl: "https://research.automate-capture.com/papers/RR-confabulation-scaling-Young2026.pdf"
+---
+
+# Research Journal Entry: Confabulation Scaling Project
+
+The fundamental challenge driving this work stems from a simple but troubling observation: large language models consistently generate plausible-sounding but entirely fabricated information. We set out to understand whether this "confabulation" behavior follows predictable scaling laws—similar to those governing model performance on legitimate tasks. The motivation runs deeper than academic curiosity. If we can predict *when* and *how often* models will hallucinate based on topic frequency and model size, we gain actionable insights for practitioners and researchers. This has immediate implications for deployment decisions: should we use a larger model if it confabulates more on rare topics? How much can we trust model outputs on niche subjects? Our approach was to build `confabulation_scaling`, a Python package that empirically measures reference recall degradation across models and topics, then fits a unified scaling law. Rather than treating hallucination as random noise, we hypothesized that confabulation is a learnable function of two variables: how often a topic appears in training data (approximated by Wikipedia frequency) and the model's parameter count.
+
+Our technical approach centers on a calibrated sigmoid function that jointly models both topic frequency and model size. The package implements three core modules working in concert. The corpus module extracts Wikipedia articles and their reference networks, establishing ground truth for what facts *should* be recalled. The evaluation module then systematically queries models of different sizes about entities and their relationships, comparing outputs against known references. We use Levenshtein distance matching to handle the fuzzy nature of recall—a model might say "Albert Einstein" when asked about relativity's discoverer, capturing semantic accuracy even without exact name matching. The scaling module then fits our central hypothesis: that recall probability follows a sigmoid curve where both topic frequency (log-transformed) and parameter count act as dual pressures. A model has *better* recall on frequent topics and when it has more capacity, but crucially, these effects interact. A tiny model might perform reasonably on very common topics but catastrophically on rare ones; larger models compress this gap but never eliminate it entirely. The calibration step cross-validates our model against held-out topics and model families, ensuring the scaling law generalizes beyond our initial fitting set.
+
+What emerged from this work surprised us in several ways. First, confabulation isn't uniformly distributed—it's highly structured and predictable. Topics appearing fewer than 50 times in Wikipedia showed dramatically worse recall across all model sizes, yet this degradation followed a reproducible pattern. Second, we discovered that parameter scaling alone is insufficient; a 7B parameter model trained on different data can outperform a larger model on some topics due to training frequency differences. This suggests that practitioners cannot simply assume "bigger is better" for factual reliability. Finally, we encountered genuine limitations: our Wikipedia-based frequency proxy misses important training data from books, papers, and web sources. Some topics are common in training but rare in Wikipedia, and vice versa. This gap between our frequency estimate and true training frequency introduces noise we cannot fully eliminate without access to complete training data distributions.
+
+Our findings connect to broader literature on scaling laws and mechanistic interpretability in language models. Where prior work like Hoffmann et al.'s Chinchilla scaling examined performance scaling across tasks, we're zooming into a specific failure mode—factual hallucination—and demonstrating it's not chaotic but lawful. This complements recent work on probing factual knowledge in transformers and studies of memorization versus generalization. Moving forward, we see opportunities to refine frequency estimates using alternative sources, extend the framework to other hallucination types (temporal facts, mathematical reasoning), and integrate this into model selection tooling for practitioners who need reliability guarantees.

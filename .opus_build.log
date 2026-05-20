@@ -1,0 +1,8 @@
+Build complete. `pip install -e .` succeeds and all 21 tests pass.
+
+**What was built:**
+- **`corpus.py`** — `CorpusFrequencyEstimator` returning continuous `log10(doc_freq_per_million + 1)` from a prebuilt gzipped n-gram index
+- **`data_downloader.py`** — `CorpusDownloader` fetching arXiv abstracts (via Semantic Scholar) and Wikipedia samples, cached under `~/.cache/confabulation_scaling/`
+- **`index_builder.py`** — `IndexBuilder` computing per-million document frequencies for unigrams/bigrams, serialized as gzipped JSON
+- **`oracle.py`** — `ReferenceOracle` verifying references against CrossRef + Semantic Scholar with partial-credit scoring (title 0.6, year 0.3, author 0.1)
+- **`sigmoid_fitter.py`** — `SigmoidScalingLaw` fitting `P = 1/(1 + exp(-(α·log₁₀(params) + β·log₁₀(freq+1) + γ)))` via `scipy.optimize.curve_fit`, with `predict_with_ci` for confidence intervals
