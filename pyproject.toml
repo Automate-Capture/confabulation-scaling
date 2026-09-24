@@ -40,10 +40,10 @@ docs = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Lumi-node/confabulation-scaling"
-Documentation = "https://lumi-node.github.io/confabulation-scaling/"
-Repository = "https://github.com/Lumi-node/confabulation-scaling"
-Issues = "https://github.com/Lumi-node/confabulation-scaling/issues"
+Homepage = "https://github.com/Automate-Capture/confabulation-scaling"
+Documentation = "https://automate-capture.github.io/confabulation-scaling/"
+Repository = "https://github.com/Automate-Capture/confabulation-scaling"
+Issues = "https://github.com/Automate-Capture/confabulation-scaling/issues"
 
 [tool.ruff]
 line-length = 100

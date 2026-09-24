@@ -1,10 +1,10 @@
 site_name: Confabulation Scaling
-site_url: https://lumi-node.github.io/confabulation-scaling/
+site_url: https://automate-capture.github.io/confabulation-scaling/
 site_description: "Predict LLM factual recall errors via scaling laws"
 site_author: Andrew Young
-repo_url: https://github.com/Lumi-node/confabulation-scaling
-repo_name: Lumi-node/confabulation-scaling
-edit_uri: edit/main/docs/
+repo_url: https://github.com/Automate-Capture/confabulation-scaling
+repo_name: Automate-Capture/confabulation-scaling
+edit_uri: edit/master/docs/
 
 theme:
   name: material
@@ -62,7 +62,7 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Lumi-node/confabulation-scaling
+      link: https://github.com/Automate-Capture/confabulation-scaling
   generator: false
 
 extra_css:

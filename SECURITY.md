@@ -2,7 +2,7 @@
 
 ## Reporting a vulnerability
 
-Please open a [private security advisory](https://github.com/Lumi-node/confabulation-scaling/security/advisories/new)
+Please open a [private security advisory](https://github.com/Automate-Capture/confabulation-scaling/security/advisories/new)
 rather than a public issue, and allow a reasonable window before disclosure.
 
 ## Supported versions

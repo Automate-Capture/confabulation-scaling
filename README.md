@@ -9,9 +9,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Lumi-node/confabulation-scaling/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
-  <a href="https://github.com/Lumi-node/confabulation-scaling"><img src="https://img.shields.io/badge/python->=3.10-brightgreen.svg" alt="Python"></a>
-  <a href="https://github.com/Lumi-node/confabulation-scaling"><img src="https://img.shields.io/badge/tests-999-blue.svg" alt="Tests"></a>
+  <a href="https://github.com/Automate-Capture/confabulation-scaling/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
+  <a href="https://github.com/Automate-Capture/confabulation-scaling"><img src="https://img.shields.io/badge/python->=3.10-brightgreen.svg" alt="Python"></a>
+  <a href="https://github.com/Automate-Capture/confabulation-scaling"><img src="https://img.shields.io/badge/tests-999-blue.svg" alt="Tests"></a>
 </p>
 
 ---
@@ -167,7 +167,7 @@ The package includes 999 tests covering data download, indexing, frequency estim
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request on [GitHub](https://github.com/Lumi-node/confabulation-scaling).
+Contributions are welcome! Please open an issue or submit a pull request on [GitHub](https://github.com/Automate-Capture/confabulation-scaling).
 
 ## License
 

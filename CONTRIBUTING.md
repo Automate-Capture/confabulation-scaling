@@ -5,7 +5,7 @@ Thank you for your interest in contributing to Confabulation Scaling!
 ## Development Setup
 
 ```bash
-git clone https://github.com/Lumi-node/confabulation-scaling.git
+git clone https://github.com/Automate-Capture/confabulation-scaling.git
 cd confabulation-scaling
 pip install -e ".[dev]"
 ```
